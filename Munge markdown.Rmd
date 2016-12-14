@@ -1,0 +1,23 @@
+---
+title: "Pollen Restriction Retinue munging"
+author: "A Walton"
+date: "December 13, 2016"
+output: word_document
+---
+```{r bees, echo = FALSE}
+setwd("~/Box Sync/Google Drive/Pollen Restriction Retinue 2016")
+day7<-read.csv("Acute Diet Restriction day7.csv")
+```
+Calculates propotion of bees responding to queen pheromone
+```{r proportion, echo=TRUE}
+total<-day7$obs1+day7$obs2+day7$obs3+day7$obs4+day7$obs5+day7$obs6
+total
+survivorstimes6<-day7$Survivors*6
+proportion<-total/survivorstimes6
+proportion<-total/day7$Survivors
+proportion
+day7$total<-total
+head(day7)
+day7$proportion<-proportion
+head(day7)
+```
